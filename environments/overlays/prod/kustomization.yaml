@@ -7,5 +7,5 @@ resources:
 - github.com/gnunn-gitops/product-catalog/components/apps/server/base
 images:
 - name: quay.io/gnunn/server
-  newName: quay.io/gnunn/server
-  newTag: test
+  newName: quay.io/gnunn/server2
+  digest: dummy

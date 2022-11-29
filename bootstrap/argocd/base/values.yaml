@@ -8,7 +8,7 @@ default:
       namespace: openshift-gitops
       server: https://kubernetes.default.svc
     source:
-      repoURL: https://github.com/gitops-examples/argocd-image-updater-example
+      repoURL: https://github.com/gnunn1/argocd-image-updater-example
       targetRevision: main
 
 projects:
@@ -38,7 +38,7 @@ applications:
 
   demo-dev:
     annotations:
-      argocd-image-updater.argoproj.io/image-list: server=quay.io/gnunn/server:dev
+      argocd-image-updater.argoproj.io/image-list: server=quay.io/gnunn/server2:dev
       argocd-image-updater.argoproj.io/server.update-strategy: digest
       argocd-image-updater.argoproj.io/write-back-method: git
       argocd-image-updater.argoproj.io/write-back-method: git:secret:demo-cicd/git-creds
@@ -52,7 +52,7 @@ applications:
 
   demo-test:
     annotations:
-      argocd-image-updater.argoproj.io/image-list: server=quay.io/gnunn/server:test
+      argocd-image-updater.argoproj.io/image-list: server=quay.io/gnunn/server2:test
       argocd-image-updater.argoproj.io/server.update-strategy: digest
       argocd-image-updater.argoproj.io/write-back-method: git
       argocd-image-updater.argoproj.io/write-back-method: git:secret:demo-cicd/git-creds
@@ -66,7 +66,7 @@ applications:
 
   demo-prod:
     annotations:
-      argocd-image-updater.argoproj.io/image-list: server=quay.io/gnunn/server:prod  
+      argocd-image-updater.argoproj.io/image-list: server=quay.io/gnunn/server2:prod  
       argocd-image-updater.argoproj.io/server.update-strategy: digest
       argocd-image-updater.argoproj.io/write-back-method: git
       argocd-image-updater.argoproj.io/write-back-method: git:secret:demo-cicd/git-creds
